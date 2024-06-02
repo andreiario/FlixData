@@ -60,25 +60,6 @@ def route_swap_mutation(offspring):
 
     return mutated_offspring
 
-# Swap Mutation
-'''
-Swap mutation selects two random positions within each sublist and swaps the elements at those positions.
-It is a basic mutation operator that introduces small changes in the order of elements within each sublist.
-'''
-def mutate(individual, mutation_rate=0.1):
-    # Make a copy of the individual to avoid mutating the original
-    mutated_individual = [sublist[:] for sublist in individual]
-
-    # Loop over each sublist
-    for sublist in mutated_individual:
-        if random.random() < mutation_rate:
-            # Randomly select two positions to swap
-            pos1 = random.randint(0, len(sublist) - 1)
-            pos2 = random.randint(0, len(sublist) - 1)
-            # Swap the elements at the selected positions
-            sublist[pos1], sublist[pos2] = sublist[pos2], sublist[pos1]
-
-    return mutated_individual
 
 # Scramble Mutation
 '''
